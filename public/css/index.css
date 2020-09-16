@@ -1,0 +1,89 @@
+body{
+    background-image: url("../img/fundo_claro2.png");  
+    background-size: cover;
+    border: none; 
+}
+
+.titulo{
+    font-family: Arial;
+    font-style: normal; 
+    font-weight: 600;   
+    font-size: 30px;   
+}
+
+.geral{    
+    padding: 25px 50px 25px 50px;    
+    padding-bottom: 10px;
+    border-radius: 10px;
+    border: black solid 1px;
+    background-color: #66CDAA;    
+}
+
+.margin_top{
+    margin-top: 10px;
+}
+
+.formulario{   
+    display: table-caption;        
+}
+
+label{
+    font-family: Arial;
+    font-style: normal;    
+    font-size: 16px;   
+}
+
+.usuario_sexo{
+    font-family: Arial;
+    font-style: normal;    
+    font-size: 16px;     
+}
+
+.input_data_nasc_formato{
+    width: 171px;
+}
+
+.salvar_formulario{    
+    font-family: Arial;
+    font-style: normal;    
+    font-size: 15px;  
+    color: white;
+    background-color: dodgerblue; 
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 5px 10px 5px 10px;
+    border: 0px;
+}
+
+th{
+    font-family: Arial;
+    font-style: normal;    
+    font-size: 15px;
+    border: black solid 1px;
+    background-color: #66CDAA;
+    width: 5%;    
+}
+
+td{
+    font-family: Arial;
+    font-style: normal;    
+    font-size: 14px;
+    text-align: center; 
+    border: black solid 1px;      
+}
+
+#titulo_remover{
+    width: 1%;
+}
+
+.botao_remover{
+    font-family: Arial;
+    font-style: normal;    
+    font-size: 14px;
+    text-align: center; 
+    background-color: red;
+    color: white; 
+    border-radius: 5px;
+    border: 0;
+    padding: 3px 10px 3px 10px;
+}
