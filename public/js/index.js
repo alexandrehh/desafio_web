@@ -1,9 +1,9 @@
-var NOME = 'Nome';
-var DATA_NASCIMENTO = 'Data Nascimento';
-var CPF = 'CPF';
-var SEXO = 'Sexo';
-var EMAIL = 'E-mail';
-var REMOVER = 'Remover';
+const NOME = 'Nome';
+const DATA_NASCIMENTO = 'Data Nascimento';
+const CPF = 'CPF';
+const SEXO = 'Sexo';
+const EMAIL = 'E-mail';
+const REMOVER = 'Remover';
 
 function salvarFormulario() {   
     let listaDeUsuarios = [];    
@@ -15,7 +15,8 @@ function salvarFormulario() {
     let feminino = document.getElementById('feminino').checked;
     let email_usuario = document.getElementById('input_email_usuario').value;   
 
-    data_nascimento = formatarData(data_nascimento);   
+    data_nascimento = formatarData(data_nascimento);  
+    cpf_usuario = formatarCPF(cpf_usuario); 
     
     usuario = {
         nome: nome_usuario,
@@ -35,8 +36,26 @@ function salvarFormulario() {
 
 
 function formatarData(data) {
-    data = data.toLocaleString().split('-').reverse().join('/')
+
+    if(data !== '') {
+        data = data.toLocaleString().split('-').reverse().join('/')
+    }    
+    
     return data;
+}
+
+function formatarCPF(cpf) {
+   
+    if(cpf !== '') {
+        let cpf_parte1 = cpf.substr(0,3);
+        let cpf_parte2 = cpf.substr(3,3);
+        let cpf_parte3 = cpf.substr(6,3);
+        let cpf_parte4 = cpf.substr(9,2);
+    
+        cpf = cpf_parte1 + '.' + cpf_parte2 + '.' + cpf_parte3 + '-' + cpf_parte4;
+    }
+    
+    return cpf;
 }
 
 function criarTagHtmlNaTabela() {
@@ -170,3 +189,19 @@ function limparInputs() {
     document.getElementById('input_email_usuario').value = '';
 }
 
+function verificarCheckbox(evento) {
+    let masculino = document.getElementById('masculino').checked;
+    let feminino = document.getElementById('feminino').checked;
+    let id_checkbox_selecionado = evento.target.id;    
+    let eh_checkbox_selecionado = evento.target.checked;
+
+    if(id_checkbox_selecionado === 'masculino' && eh_checkbox_selecionado) {
+        if(feminino) {
+            document.getElementById('feminino').checked = false;
+        }
+    } else if(id_checkbox_selecionado === 'feminino' && eh_checkbox_selecionado) {
+        if(masculino) {
+            document.getElementById('masculino').checked = false;
+        }
+    }
+}

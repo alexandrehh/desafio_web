@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
+    <title>Cadastro de Novos Usuários</title>
 
     <link rel="stylesheet" type="text/css" href="./public/css/index.css">
     <script src="./public/js/index.js"></script>
@@ -26,9 +26,9 @@
                 <input type="number" id="input_cpf_usuario"></input>                  
             </div>
             <div id="div_sexo_usuario" class="margin_top usuario_sexo">
-                <input type="checkbox" id="masculino">Masculino</input>  
+                <input type="checkbox" id="masculino" onclick="verificarCheckbox(event)">Masculino</input>  
                 <br>                            
-                <input type="checkbox" id="feminino">Feminino</input>  
+                <input type="checkbox" id="feminino" onclick="verificarCheckbox(event)">Feminino</input>  
             </div>
             <div id="div_email_usuario" class="margin_top">
                 <label for="label_email">E-mail</label>
